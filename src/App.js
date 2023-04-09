@@ -18,7 +18,7 @@ const App = () => {
       
       </Routes>
   )
- 
+ console.log('Hello world!')
 }
 
 export default App;
