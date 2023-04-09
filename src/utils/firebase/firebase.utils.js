@@ -64,7 +64,17 @@ try {
     return userDocRef;
 
   }
+ 
+export const getUserDocFromAuth = async (email, password) => {
+ const docRef = doc(db, 'users', getAuth.user.uid);
+ const docSnap = await getDoc (docRef);
 
+ if (docSnap.exists()) {
+  console.log("document data:", docSnap.data())
+ } else {
+  console.log("No such document!")
+ }
+}
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if(!email || !password ) return;
   
